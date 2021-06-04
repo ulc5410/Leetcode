@@ -1,5 +1,5 @@
 import java.util.Arrays;
-
+//Remove Duplicates from Sorted Array
 public class Problem26 {
     public static int removeDuplicates(int[] nums) {
 //        changes made inplace and return nums.length;
