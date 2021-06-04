@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 public class Problem26 {
     public static int removeDuplicates(int[] nums) {
+//        changes made inplace and return nums.length;
         if (nums.length == 0) return 0;
         int j = 0;
         for (int i = 1; i<nums.length; i = i+1){
