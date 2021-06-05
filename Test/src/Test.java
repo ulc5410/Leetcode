@@ -6,7 +6,8 @@ public class Test {
         String s2 = "dbbca";
         String s3 = "aadbbcbcac";
 
-        System.out.println( s1.charAt(0) );
+        char c = '2';
+        System.out.println( c - '0' );
     }
 
 }

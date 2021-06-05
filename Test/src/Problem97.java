@@ -1,5 +1,5 @@
 //leetcode 97
-public class InterleavingString {
+public class Problem97 {
     public static boolean isInterleave(String s1, String s2, String s3) {
         if ((s1.length()+s2.length()) != s3.length()) {
             System.out.println("not equal length");
