@@ -2,10 +2,8 @@ import java.util.*;
 
 class Problem1690{
     //1690
-    static int [][] score_chart ;
-
     public static int stoneGameVII(int[] stones) {
-        score_chart = new int [stones.length][stones.length];
+        int [][] score_chart  = new int [stones.length][stones.length];
         for (int i = 0; i < stones.length; i++) {
             int tmp_sum = 0;
             for (int j = i; j <stones.length; j++){
