@@ -38,10 +38,8 @@ class IntervalComparator implements Comparator<Interval>{
 
 class Main {
     public static void main(String[] args) {
-
-//        Test.MyCalendar.MyCalendar();
         MyCalendar test = new MyCalendar();
-//        test.booked.add("sss");
+        
         System.out.println(test.book(10, 20)); // returns true
         System.out.println(test.book(15, 25)); // returns false
         System.out.println(test.book(20, 30)); // returns true
