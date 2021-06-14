@@ -7,10 +7,6 @@ class Test{
     class Problem336 {
         public static List<List<Integer>> palindromePairs(String[] words) {
             List<List<Integer>> result = new ArrayList<List<Integer>>();
-            Map<String, Integer> reverse = new HashMap<String, Integer>();
-            for (int i = 0; i <words.length; i++){
-                reverse.put(new StringBuilder(words[i]).reverse().toString(), i);
-            }
 
             for (int i = 0; i <words.length; i++){
                 for( int j =0; j< words.length; j++){
