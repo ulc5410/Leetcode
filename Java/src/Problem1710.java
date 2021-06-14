@@ -13,17 +13,17 @@ class Test{
     public static int maximumUnits(int[][] boxTypes, int truckSize) {
         Arrays.sort(boxTypes, new SortbyUnits());
 
-        int total = 0, count = 0;
+        int total = 0;
 
         for (int i = 0; i < boxTypes.length; i++){
-            for (int j = 0; j<boxTypes[i][0]; j++) {
-                if (count >= truckSize)
-                    break;
-                total += boxTypes[i][1];
-                count += 1;
+            if (truckSize >= boxTypes[i][0]){
+                total += boxTypes[i][0] * boxTypes[i][1];
+                truckSize -= boxTypes[i][0];
             }
-            if (count >= truckSize)
+            else{
+                total += boxTypes[i][1] * truckSize;
                 break;
+            }
         }
 
         return total;
