@@ -3,10 +3,9 @@ import java.util.*;
 class Test{
     public static String restoreString(String s, int[] indices) {
         char [] tmp = new char[indices.length];
-        char [] s_char = s.toCharArray();
 
         for (int i = 0; i < indices.length; i++){
-            tmp[indices[i]] = s_char[i];
+            tmp[indices[i]] = s.charAt(i);
         }
 
         return new String(tmp);
