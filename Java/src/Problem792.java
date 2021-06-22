@@ -3,18 +3,16 @@ import java.util.*;
 class Test{
     public static int numMatchingSubseq(String s, String[] words) {
         int matched = 0;
-        List<List<Integer>> char_pos = new ArrayList<List<Integer>>(); //ascii a: 97
-
-        Map<Character, Integer> map = new HashMap<Character, Integer>();
+        Map<Character, List<Integer>> map = new HashMap<Character, List<Integer>>();
 
         for(int i = 0; i < s.length(); i++){
             if( !map.containsKey(s.charAt(i)) ){
-                map.put(s.charAt(i), char_pos.size());
-                char_pos.add(new ArrayList<>());
-                char_pos.get(map.get(s.charAt(i))).add(i);
+                ArrayList<Integer> tmp = new ArrayList<Integer>();
+                tmp.add(i);
+                map.put(s.charAt(i), tmp);
             }
             else{
-                char_pos.get(map.get(s.charAt(i))).add(i);
+                map.get(s.charAt(i)).add(i);;
             }
         }
 
@@ -25,8 +23,7 @@ class Test{
             for (int j = 0; j < words[i].length(); j++){
                 if (!map.containsKey(words[i].charAt(j))) break;
                 else{
-                    int list_pos = map.get(words[i].charAt(j));
-                    List<Integer> tmp = char_pos.get(list_pos);
+                    List<Integer> tmp = map.get(words[i].charAt(j));
                     int flag = 0;
 
                     for(int k = 0; k < tmp.size(); k++){
@@ -36,7 +33,6 @@ class Test{
                             break;
                         }
                     }
-
                     if(flag==0) break;
                 }
                 word_pointer += 1;
@@ -48,11 +44,11 @@ class Test{
     }
 
     public static void main(String[] args) {
-        String s = "abcde";
-        String [] words = {"a","bb","acd","ace"};
+//        String s = "abcde";
+//        String [] words = {"a","bb","acd","ace"};
 
-//        String s = "dsahjpjauf";
-//        String [] words = {"ahjpjau","ja","ahbwzgqnuk","tnmlanowax"};
+        String s = "dsahjpjauf";
+        String [] words = {"ahjpjau","ja","ahbwzgqnuk","tnmlanowax"};
 
         System.out.println(numMatchingSubseq(s, words));
     }
