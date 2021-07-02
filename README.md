@@ -8,6 +8,8 @@ Array:
 Pointer:
 * 26.Remove Duplicates from Sorted Array
 
+Binary Search:
+* 658.Find K Closest Elements
 Hash:
 * 1.Two Sum
 * 128.Longest Consecutive Sequence
