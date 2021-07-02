@@ -40,6 +40,7 @@ class Test{
 //
                     Braces tmp = braces[left][right];
 
+                    //add right parentheses
                     Braces old_cursor  = braces[left][right-1];
                     do{
                         if(old_cursor.c != null){
@@ -54,6 +55,7 @@ class Test{
                         old_cursor = old_cursor.next;
                     }while(old_cursor != null);
 
+                    //add left parentheses
                     old_cursor  = braces[left-1][right];
                     do{
                         if(old_cursor.c != null){

@@ -1,55 +1,90 @@
 import java.util.*;
 
-public class Test{
-    public static int power_2(int n){
-        return (int)(Math.pow(2, n));
+class Test{
+
+    static class Braces{
+        String c; // combinations
+        Braces next;
+        Braces(){
+            next = null;
+        }
+        Braces(String input){
+            c = input;
+            next = null;
+        }
+        Braces(String input, Braces n){
+            c = input;
+            next = n;
+        }
     }
 
-    public static List<Integer> grayCode(int n) {
-        List<Integer> result = new ArrayList<Integer>(power_2(n));
-        int [] flip = new int [power_2(n)-1];// records which binary to flip //
-        int cur_length = 0;
+    public static List<String> generateParenthesis(int n) {
+        int [][] dp = new int [n+1][n+1];
+        Braces [][] braces = new Braces[n+1][n+1];
 
-
-        for(int i = 0; i < n; i++){
-            if (i == 0){ // up to 2^0
-                flip[0] = 0;
+        for (int left = 0; left < n+1; left++)
+            for (int right = 0; right < n+1; right++){
+                braces[left][right] = new Braces();
             }
-            else{ // up to 2^i
-                flip[cur_length] = i;
-                for(int j = 0; j < cur_length; j++){
-                    flip[cur_length+j+1] = flip[j];
+
+        for (int left = 0; left <= n; left++){
+            dp[left][0] = 1;
+            braces[left][0] = new Braces(new String(new char[left]).replace("\0", "("));
+        }
+
+
+        for (int left = 1; left < n+1; left++)
+            for (int right = 1; right < n+1; right++){
+                if (right <= left){
+                    dp[left][right] = dp[left-1][right] + dp[left][right-1];
+//
+                    Braces tmp = braces[left][right];
+
+                    Braces old_cursor  = braces[left][right-1];
+                    do{
+                        if(old_cursor.c != null){
+                            char [] new_string = new char [old_cursor.c.length()+1];
+                            System.arraycopy(old_cursor.c.toCharArray(), 0, new_string, 0, old_cursor.c.length());
+                            new_string[old_cursor.c.length()] = ')';
+                            tmp.c = new String(new_string);
+                            Braces new_tmp = new Braces();
+                            tmp.next = new_tmp;
+                            tmp = new_tmp;
+                        }
+                        old_cursor = old_cursor.next;
+                    }while(old_cursor != null);
+
+                    old_cursor  = braces[left-1][right];
+                    do{
+                        if(old_cursor.c != null){
+                            char [] new_string = new char [old_cursor.c.length()+1];
+                            System.arraycopy(old_cursor.c.toCharArray(), 0, new_string, 0, old_cursor.c.length());
+                            new_string[old_cursor.c.length()] = '(';
+                            tmp.c = new String(new_string);
+                            Braces new_tmp = new Braces();
+                            tmp.next = new_tmp;
+                            tmp = new_tmp;
+                        }
+                        old_cursor = old_cursor.next;
+                    }while(old_cursor != null);
                 }
             }
 
-            cur_length += power_2(i);
-        }
+        List<String> result = new LinkedList<String>();
+        Braces tmp = braces[n][n];
+        do{
+            if(tmp.c != null)
+                result.add(tmp.c);
+            tmp = tmp.next;
+        }while(tmp != null);
 
-        char [] cur_number = new char[power_2(n)]; //reads right to left
-        for(int i = 0; i < cur_number.length; i++){
-            cur_number[i] = '0';
-        }
-        int cur_decimal = 0;
-        result.add(0);
-
-        for(int i = 0; i < flip.length; i++){
-            int flipping = flip[i]; //which digit to flip
-            if(cur_number[flipping] == '1') {
-                cur_number[flipping] = '0';
-                cur_decimal -= power_2(flipping);
-            }
-            else if(cur_number[flipping] == '0') {
-                cur_number[flipping] = '1';
-                cur_decimal += power_2(flipping);
-            }
-            result.add(cur_decimal);
-        }
         return result;
     }
 
     public static void main(String[] args) {
-        int n = 2;
-        System.out.println( grayCode(n));
+        int n = 3;
+//        System.out.println('s'*5);
+        System.out.println(generateParenthesis(n));
     }
 }
 
