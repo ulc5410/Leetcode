@@ -15,12 +15,17 @@ Hash:
 Map:
 * 792.Number of Matching Subsequences
 
+Stack:
+* --1047. Remove All Adjacent Duplicates In String
+
 Queue:
 * 752.Open the Lock
 
 Tree:
 * 105.Construct Binary Tree from Preorder and Inorder Traversal(Binary Tree)
+* --236.Lowest Common Ancestor of a Binary Tree
 * 307.Range Sum Query - Mutable(Fenwick Tree)
+* --315. Count of Smaller Numbers After Self(AVL)
 
 Graph:
 * 684.Redundant Connection
@@ -39,8 +44,10 @@ DP:
 
 Greedy:
 * 89.Gray Code
-* 1383.Maximum Performance of a Team
 * 778.Swim in Rising Water (Dijkstra)
+* --1004.Max Consecutive Ones III
+* 1383.Maximum Performance of a Team
+
 
 Others:
 * 729.My Calendar I
@@ -48,3 +55,5 @@ Others:
 * 1465.Maximum Area of a Piece of Cake After Horizontal and Vertical Cuts
 * 1528.Shuffle String
 * 1710.Maximum Units on a Truck
+
+** "--"means not implemented
