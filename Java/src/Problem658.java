@@ -1,6 +1,7 @@
 import java.util.*;
 
 class Test{
+//    Binary Search + sliding window solution is more intuitive
     public static List<Integer> findClosestElements(int[] arr, int k, int x) {
         List<Integer> result = new ArrayList<Integer>();
         int pos1 = 0, pos2 = arr.length - k;
