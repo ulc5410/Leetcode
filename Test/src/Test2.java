@@ -1,42 +1,32 @@
 import java.util.*;
 
-class Solution {
-    public static List<Integer> findClosestElementss(int[] arr, int k, int x) {
-        // Initialize binary search bounds
-        int left = 0;
-        int right = arr.length - k;
+class NumMatrix {
 
-        // Binary search against the criteria described
-        while (left < right) {
-            int mid = (left + right) / 2;
-            if ((x - arr[mid]) > arr[mid + k] - x) {
-                left = mid + 1;
-            } else {
-                right = mid;
+    private static int[][] dp;
+
+    public NumMatrix(int[][] matrix) {
+        if (matrix.length == 0 || matrix[0].length == 0) return;
+        dp = new int[matrix.length][matrix[0].length + 1];
+        for (int r = 0; r < matrix.length; r++) {
+            for (int c = 0; c < matrix[0].length; c++) {
+                dp[r][c + 1] = dp[r][c] + matrix[r][c];
             }
         }
-
-        // Create output in correct format
-        List<Integer> result = new ArrayList<Integer>();
-        for (int i = left; i < left + k; i++) {
-            result.add(arr[i]);
-        }
-
-        return result;
     }
 
+    public static int sumRegion(int row1, int col1, int row2, int col2) {
+        int sum = 0;
+        for (int row = row1; row <= row2; row++) {
+            sum += dp[row][col2 + 1] - dp[row][col1];
+        }
+        return sum;
+    }
+}
+
+class Test2{
     public static void main(String[] args) {
-//        int [] arr = {1,2,3,4,5};
-//        int k = 4, x = 1;
-
-//        int [] arr = {1,1,2,2,2,2,2,3,3};
-//        int k = 3, x = 3;
-//
-        int [] arr = {0,0,1,2,3,3,4,7,7,8};
-        int k = 3, x = 5;
-
-//        int [] arr = {0,1,1,1,2,3,6,7,8,9};
-//        int k = 9, x = 4;
-        System.out.println(findClosestElementss(arr, k, x));
+        int [][] matrix = {{3, 0, 1, 4, 2}, {5, 6, 3, 2, 1}, {1, 2, 0, 1, 5}, {4, 1, 0, 1, 7}, {1, 0, 3, 0, 5}};
+        NumMatrix m = new NumMatrix(matrix);
+        System.out.println(NumMatrix.sumRegion(2, 1, 4, 3));
     }
 }

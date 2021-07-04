@@ -36,16 +36,19 @@ DP:
 * 22.Generate Parentheses
 * 97.Interleaving String
 * 118.Pascal's Triangle 
-* 198.House Robber 
+* 198.House Robber
+* --304.Range Sum Query 2D - Immutable
 * 576.Out of Boundary Paths
 * 746.Min Cost Climbing Stairs
 * 795.Number of Subarrays with Bounded Maximum
 * 871.Minimum Number of Refueling Stops
+* 1220.Count Vowels Permutation
 * 1690.Stone Game VII
 * 1696.Jump Game VI
 
 Greedy:
 * 89.Gray Code
+* --135.Candy
 * 778.Swim in Rising Water (Dijkstra)
 * --1004.Max Consecutive Ones III
 * 1383.Maximum Performance of a Team
