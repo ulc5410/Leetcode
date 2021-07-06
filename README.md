@@ -5,6 +5,7 @@ Array:
 * 7.Reverse Integer
 * 92.Reverse Linked List II
 * 566.Reshape the Matrix
+* 1338.Reduce Array Size to The Half
 
 Pointer:
 * 26.Remove Duplicates from Sorted Array
