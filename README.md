@@ -4,6 +4,7 @@
 Array:
 * 7.Reverse Integer
 * 92.Reverse Linked List II
+* 566.Reshape the Matrix
 
 Pointer:
 * 26.Remove Duplicates from Sorted Array
@@ -38,6 +39,7 @@ DP:
 * 118.Pascal's Triangle 
 * 198.House Robber
 * --304.Range Sum Query 2D - Immutable
+* --363.Max Sum of Rectangle No Larger Than K(replace the 1d max range sum from https://www.youtube.com/watch?v=yCQN096CwWM)
 * 576.Out of Boundary Paths
 * 746.Min Cost Climbing Stairs
 * 795.Number of Subarrays with Bounded Maximum
