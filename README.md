@@ -43,6 +43,7 @@ DP:
 * 97.Interleaving String
 * 118.Pascal's Triangle
 * 198.House Robber
+* 300.Longest Increasing Subsequence
 * --304.Range Sum Query 2D - Immutable
 * --363.Max Sum of Rectangle No Larger Than K(replace the 1d max range sum from https://www.youtube.com/watch?v=yCQN096CwWM)
 * 576.Out of Boundary Paths
