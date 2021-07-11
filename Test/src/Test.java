@@ -1,27 +1,44 @@
 import java.util.*;
 
 class Test{
-    public static int lengthOfLIS(int[] nums) {
-        int [] dp = new int[nums.length]; //longest length ending at ith
-        Arrays.fill(dp, 1);
+ /** initialize your data structure here. */
+ static class MedianFinder{
+         int[] nums;
+         int length;
+        public MedianFinder() {
+            nums = new int[100000];
+            length = 0;
+         }
 
-        for(int i = 1; i < nums.length; i++){
-            for(int j = 0; j < i; j++){
-                if(nums[j] < nums[i]) dp[i] = Math.max(dp[i], dp[j]+1);
-            }
-        }
-        int max = Integer.MIN_VALUE;
-        for(int i = 0; i < dp.length; i++){
-            if(max < dp[i]) max = dp[i];
-        }
-        return max;
-    }
+         public void addNum (int num){
+             nums[length] = num;
+             length += 1;
+         }
+
+         public double findMedian () {
+             if(length%2 == 0){
+                 return (double)(nums[length/2-1] + nums[length/2])/2;
+             }
+             else{
+                 return nums[length/2];
+             }
+         }
+     }
+
+    /**
+     * Your MedianFinder object will be instantiated and called as such:
+     * MedianFinder obj = new MedianFinder();
+     * obj.addNum(num);
+     * double param_2 = obj.findMedian();
+     */
 
     public static void main(String[] args) {
-//        int [] nums = {10,9,2,5,3,7,101,18};
-//        int [] nums = {4,10,4,3,8,9};
-        int [] nums = {0,1,0,3,2,3};
-        System.out.println(lengthOfLIS(nums));
+     MedianFinder obj = new MedianFinder();
+     obj.addNum(1);
+     obj.addNum(2);
+     System.out.print(obj.findMedian());
+     obj.addNum(3);
+     System.out.print(obj.findMedian());
     }
 }
 

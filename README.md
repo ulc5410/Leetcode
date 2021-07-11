@@ -26,6 +26,9 @@ Map:
 Stack:
 * --1047. Remove All Adjacent Duplicates In String
 
+Heap:
+* --295.Find Median from Data Stream
+
 Queue:
 * 752.Open the Lock
 
