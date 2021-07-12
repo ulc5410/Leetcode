@@ -21,6 +21,7 @@ Hash:
 * 128.Longest Consecutive Sequence
 
 Map:
+* 205.Isomorphic Strings
 * 792.Number of Matching Subsequences
 
 Stack:
