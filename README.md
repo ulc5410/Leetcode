@@ -15,6 +15,7 @@ Pointer:
 * 26.Remove Duplicates from Sorted Array
 
 Binary Search:
+* 162.Find Peak Element
 * 658.Find K Closest Elements
 Hash:
 * 1.Two Sum
