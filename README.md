@@ -9,6 +9,7 @@ Array:
 * 217.Contains Duplicate
 * 378.Kth Smallest Element in a Sorted Matrix
 * 566.Reshape the Matrix
+* 791.Custom Sort String
 * 1338.Reduce Array Size to The Half
 
 Pointer:
@@ -17,6 +18,7 @@ Pointer:
 Binary Search:
 * 162.Find Peak Element
 * 658.Find K Closest Elements
+
 Hash:
 * 1.Two Sum
 * 128.Longest Consecutive Sequence
