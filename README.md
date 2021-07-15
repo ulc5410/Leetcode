@@ -45,6 +45,9 @@ Tree:
 Graph:
 * 684.Redundant Connection
 
+Amortized Analysis:
+* 611.Valid Triangle Number
+
 DP:
 * 22.Generate Parentheses
 * 97.Interleaving String
