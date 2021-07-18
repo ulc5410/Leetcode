@@ -28,6 +28,7 @@ Map:
 * 792.Number of Matching Subsequences
 
 Stack:
+* 25.Reverse Nodes in k-Group
 * --1047. Remove All Adjacent Duplicates In String
 
 Heap:

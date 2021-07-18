@@ -1,12 +1,12 @@
 import java.util.*;
 
- class ListNode {
-      int val;
-      ListNode next;
-      ListNode() {}
-      ListNode(int val) { this.val = val; }
-      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- }
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode() {}
+    ListNode(int val) { this.val = val; }
+    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+}
 
 class Test{
     // O(N)
@@ -22,7 +22,7 @@ class Test{
             count += 1;
 
             if(count == k){
-                 next_k = current;
+                next_k = current;
                 while(!stack.isEmpty()){
                     ans_pointer.next = stack.pop();
                     ans_pointer = ans_pointer.next;
@@ -51,8 +51,6 @@ class Test{
             System.out.println(head.val);
             head = head.next;
         }
-
-//        System.out.println(reverseKGroup(head, k));
     }
 }
 
