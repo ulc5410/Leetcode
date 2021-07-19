@@ -39,7 +39,8 @@ Queue:
 
 Tree:
 * 105.Construct Binary Tree from Preorder and Inorder Traversal(Binary Tree)
-* --236.Lowest Common Ancestor of a Binary Tree
+* 235.Lowest Common Ancestor of a Binary Search Tree
+* 236.Lowest Common Ancestor of a Binary Tree
 * 307.Range Sum Query - Mutable(Fenwick Tree)
 * --315. Count of Smaller Numbers After Self(AVL)
 
