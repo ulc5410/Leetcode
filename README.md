@@ -3,6 +3,7 @@
 
 Array:
 * 7.Reverse Integer
+* 66.Plus One
 * 92.Reverse Linked List II
 * 122.Best Time to Buy and Sell Stock
 * 136.Single Number
