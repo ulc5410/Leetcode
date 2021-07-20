@@ -5,6 +5,7 @@ Array:
 * 7.Reverse Integer
 * 92.Reverse Linked List II
 * 122.Best Time to Buy and Sell Stock
+* 136.Single Number
 * 189.Rotate Array
 * 217.Contains Duplicate
 * 378.Kth Smallest Element in a Sorted Matrix
