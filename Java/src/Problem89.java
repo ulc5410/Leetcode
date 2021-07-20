@@ -10,9 +10,9 @@ public class Test{
         int [] flip = new int [power_2(n)-1];// records which binary to flip //
         int cur_length = 0; // number of numbers = 2^n-1
 
-        //flipping 2^i-1 times each loop;  first flip the new digit then flipping by the sequence before it.
+        //flipping 2^i-1 times each loop visits all numbers smaller than 2^i-1;  first flip the new digit then flipping by the sequence before it.
         for(int i = 0; i < n; i++){
-            if (i == 0){ // up to 2^0
+            if (i == 0){
                 flip[0] = 0;
             }
             else{ // up to 2^i
@@ -21,7 +21,6 @@ public class Test{
                     flip[cur_length+j+1] = flip[j];
                 }
             }
-
             cur_length += power_2(i);
         }
 
