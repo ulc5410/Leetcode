@@ -9,7 +9,7 @@ class Solution {
 
     /** Resets the array to its original configuration and return it. */
     public int[] reset() {
-        shuffled = Arrays.copyOfRange(original, 0, original.length);;
+        shuffled = Arrays.copyOfRange(original, 0, original.length);
         return original;
     }
 
@@ -35,6 +35,6 @@ public class Test {
         Solution obj = new Solution(nums);
         int[] param_1 = obj.reset();
         int[] param_2 = obj.shuffle();
-        System.out.println("done");
+        System.out.println(Arrays.toString(param_2));
     }
 }
