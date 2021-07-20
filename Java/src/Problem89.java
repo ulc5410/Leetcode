@@ -8,9 +8,9 @@ public class Test{
     public static List<Integer> grayCode(int n) {
         List<Integer> result = new ArrayList<Integer>(power_2(n));
         int [] flip = new int [power_2(n)-1];// records which binary to flip //
-        int cur_length = 0;
+        int cur_length = 0; // number of numbers = 2^n-1
 
-
+        //flipping 2^i-1 times each loop;  first flip the new digit then flipping by the sequence before it.
         for(int i = 0; i < n; i++){
             if (i == 0){ // up to 2^0
                 flip[0] = 0;
@@ -25,14 +25,12 @@ public class Test{
             cur_length += power_2(i);
         }
 
-        char [] cur_number = new char[power_2(n)]; //reads right to left
-        for(int i = 0; i < cur_number.length; i++){
-            cur_number[i] = '0';
-        }
+        char [] cur_number = new char[n]; //binary representation reads right to left
+        Arrays.fill(cur_number, '0');
         int cur_decimal = 0;
         result.add(0);
 
-        for(int i = 0; i < flip.length; i++){
+        for(int i = 0; i < flip.length; i++){ //actual flipping using the flip sequence
             int flipping = flip[i]; //which digit to flip
             if(cur_number[flipping] == '1') {
                 cur_number[flipping] = '0';
@@ -48,7 +46,7 @@ public class Test{
     }
 
     public static void main(String[] args) {
-        int n = 2;
+        int n = 3;
         System.out.println( grayCode(n));
     }
 }

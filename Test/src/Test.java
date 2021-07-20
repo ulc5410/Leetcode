@@ -1,35 +1,53 @@
 import java.util.*;
 
-class Solution {
-    public int[] intersect(int[] nums1, int[] nums2) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        List <Integer> intersection = new ArrayList<>();
+public class Test{
+    public static int power_2(int n){
+        return (int)(Math.pow(2, n));
+    }
 
-        for(int i = 0; i < nums1.length; i++){
-            map.put(nums1[i], map.getOrDefault(nums1[i], 0)+1);
-        }
+    public static List<Integer> grayCode(int n) {
+        List<Integer> result = new ArrayList<Integer>(power_2(n));
+        int [] flip = new int [power_2(n)-1];// records which binary to flip //
+        int cur_length = 0; // number of numbers = 2^n-1
 
-        for(int i = 0; i < nums2.length; i++){
-            int count = map.getOrDefault(nums2[i], 0);
-            if(count != 0){
-                map.put(nums2[i], count-1);
-                intersection.add(nums2[i]);
+        //flipping 2^i-1 times each loop;  first flip the new digit then flipping by the sequence before it.
+        for(int i = 0; i < n; i++){
+            if (i == 0){ // up to 2^0
+                flip[0] = 0;
             }
+            else{ // up to 2^i
+                flip[cur_length] = i;
+                for(int j = 0; j < cur_length; j++){
+                    flip[cur_length+j+1] = flip[j];
+                }
+            }
+
+            cur_length += power_2(i);
         }
 
-        int [] result = new int[intersection.size()];
-        for(int i = 0; i < intersection.size(); i++){
-            result[i] = intersection.get(i);
+        char [] cur_number = new char[n]; //binary representation reads right to left
+        Arrays.fill(cur_number, '0');
+        int cur_decimal = 0;
+        result.add(0);
+
+        for(int i = 0; i < flip.length; i++){ //actual flipping using the flip sequence
+            int flipping = flip[i]; //which digit to flip
+            if(cur_number[flipping] == '1') {
+                cur_number[flipping] = '0';
+                cur_decimal -= power_2(flipping);
+            }
+            else if(cur_number[flipping] == '0') {
+                cur_number[flipping] = '1';
+                cur_decimal += power_2(flipping);
+            }
+            result.add(cur_decimal);
         }
         return result;
     }
-}
 
-public class Test {
     public static void main(String[] args) {
-        int [] nums1 = {4, 9, 5}, nums2 = {9, 4, 9, 8, 4};
-        Solution obj = new Solution();
-
-        System.out.println(Arrays.toString(obj.intersect(nums1, nums2 )));
+        int n = 3;
+        System.out.println( grayCode(n));
     }
 }
+
