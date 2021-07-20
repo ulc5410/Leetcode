@@ -8,6 +8,7 @@ Array:
 * 189.Rotate Array
 * 217.Contains Duplicate
 * 378.Kth Smallest Element in a Sorted Matrix
+* 384.Shuffle an Array
 * 566.Reshape the Matrix
 * 791.Custom Sort String
 * 1338.Reduce Array Size to The Half

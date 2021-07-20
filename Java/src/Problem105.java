@@ -13,11 +13,12 @@ public class Problem105 {
             this.left = left;
             this.right = right;
         }
-        public void preorder_print(){
-            System.out.println(this.val);
-            if (this.left!=null) this.left.preorder_print();
-            if (this.right!=null) this.right.preorder_print();
-        }
+    }
+
+    public void preorder_print(TreeNode T){
+        System.out.println(T.val);
+        if (T.left!=null) preorder_print(T.left);
+        if (T.right!=null) preorder_print(T.right);
     }
 
     public static TreeNode buildTree(int[] preorder, int[] inorder) {

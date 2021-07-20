@@ -11,10 +11,13 @@ class Test{
     // O(N)
     public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || root.val == p.val || root.val == q.val) return root;
+
         TreeNode l = lowestCommonAncestor(root.left, p, q);
         TreeNode r = lowestCommonAncestor(root.right, p, q);
-        if (l == null || r == null) return l == null ? r : l;
-        return root;
+
+        if (l == null) return r;
+        else if (r == null) return l;
+        else return root;
     }
 
     static TreeNode makeTree(TreeNode current, int val){ //binary search tree
