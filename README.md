@@ -17,6 +17,9 @@ Array:
 * 791.Custom Sort String
 * 1338.Reduce Array Size to The Half
 
+String:
+* 344.Reverse String
+
 Pointer:
 * 26.Remove Duplicates from Sorted Array
 
