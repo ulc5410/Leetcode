@@ -5,7 +5,6 @@ Array:
 * 7.Reverse Integer
 * 66.Plus One
 * 92.Reverse Linked List II
-* 122.Best Time to Buy and Sell Stock
 * 136.Single Number
 * 189.Rotate Array
 * 217.Contains Duplicate
@@ -85,6 +84,8 @@ Greedy:
 
 
 Others:
+* 121.Best Time to Buy and Sell Stock
+* 122.Best Time to Buy and Sell Stock II
 * 729.My Calendar I
 * 860.Lemonade Change
 * 1465.Maximum Area of a Piece of Cake After Horizontal and Vertical Cuts
