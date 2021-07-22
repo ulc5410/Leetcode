@@ -14,6 +14,7 @@ Array:
 * 384.Shuffle an Array
 * 566.Reshape the Matrix
 * 791.Custom Sort String
+* 915.Partition Array into Disjoint Intervals
 * 1338.Reduce Array Size to The Half
 
 String:
