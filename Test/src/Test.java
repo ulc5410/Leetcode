@@ -61,7 +61,7 @@ class Solution {
 public class Test {
     public static void main(String[] args) {
         Solution obj = new Solution();
-//        [1,null,0,0,1]
+
         TreeNode root = new TreeNode(1, null, null, 1);
         TreeNode.insert(2, 0, root);
         TreeNode.insert(3, 0, root);
@@ -73,8 +73,6 @@ public class Test {
         root = obj.pruneTree(root);
         TreeNode.preorder(root);
 
-
-//        System.out.println(obj.partitionDisjoint(nums));
         System.out.println("done");
     }
 }
