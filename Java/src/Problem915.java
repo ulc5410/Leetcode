@@ -14,7 +14,7 @@ class Solution {
             }else if ((nums[i] >= largeset) && (reset == true)) {
                 partition_pos = i;
                 reset = false;
-                if(left_largest < largeset) left_largest = largeset;
+                left_largest = largeset;
             }
 
             if(largeset < nums[i]) largeset = nums[i];
