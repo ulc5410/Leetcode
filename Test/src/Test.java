@@ -1,56 +1,24 @@
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
- class TreeNode {
-     int val;
-     TreeNode left;
-     TreeNode right;
-
-     TreeNode() {
-     }
-
-     TreeNode(int val) {
-         this.val = val;
-     }
-
-     TreeNode(int val, TreeNode left, TreeNode right) {
-         this.val = val;
-         this.left = left;
-         this.right = right;
-     }
- }
-
-class Solution {
-    public TreeNode sortedArrayToBST(int[] nums) {
-        if(nums.length == 0) return null;
-        int mid = nums.length/2;
-        TreeNode root = new TreeNode(nums[mid]);
-
-        root.left = sortedArrayToBST(Arrays.copyOfRange(nums, 0, mid));
-        root.right = sortedArrayToBST(Arrays.copyOfRange(nums, mid+1, nums.length));
-
-        return root;
-    }
-
-    void printBFS(TreeNode root){
-        Queue<TreeNode> q = new LinkedList<>();
-        q.add(root);
-
-        while(!q.isEmpty()){
-            TreeNode tmp = q.poll();
-            if(tmp.left != null) q.add(tmp.left);
-            if(tmp.right != null) q.add(tmp.right);
-            System.out.println(tmp.val);
-        }
-    }
-}
-
+//Two Sum
 public class Test {
-    public static void main(String[] args) {
-        Solution obj = new Solution();
-        int [] nums = {-10,-3,0,5,9};
-        TreeNode root = obj.sortedArrayToBST(nums);
-        obj.printBFS(root);
+    public static int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
 
-        System.out.println("done");
+        for (int i = 0; i < nums.length; i=i+1) {
+            int complement = target - nums[i];
+            if (map.containsKey(complement) && map.get(complement)!=i) return new int[]{i, map.get(complement)};
+            map.put(nums[i], i);
+        }
+
+        throw new IllegalArgumentException("No two sum solution");
+    }
+
+    public static void main(String[] args) {
+        int [] nums = {2,7,11,15};
+        int target = 9;
+
+        System.out.println(java.util.Arrays.toString( twoSum(nums, target) ));
     }
 }
