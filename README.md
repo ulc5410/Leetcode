@@ -71,6 +71,7 @@ DP:
 * 300.Longest Increasing Subsequence
 * --304.Range Sum Query 2D - Immutable
 * --363.Max Sum of Rectangle No Larger Than K(replace the 1d max range sum from https://www.youtube.com/watch?v=yCQN096CwWM)
+* 542.01 Matrix
 * 576.Out of Boundary Paths
 * 718.Maximum Length of Repeated Subarray
 * 746.Min Cost Climbing Stairs
