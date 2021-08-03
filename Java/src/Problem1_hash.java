@@ -1,8 +1,5 @@
-import java.util.HashMap;
-import java.util.Map;
-
-//Two Sum
-public class Test {
+import java.util.*;
+class Solution {
     public static int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
 
@@ -14,11 +11,14 @@ public class Test {
 
         throw new IllegalArgumentException("No two sum solution");
     }
+}
 
+public class Test {
     public static void main(String[] args) {
+        Solution obj = new Solution();
         int [] nums = {2,7,11,15};
         int target = 9;
 
-        System.out.println(java.util.Arrays.toString( twoSum(nums, target) ));
+        System.out.println( Arrays.toString(obj.twoSum(nums, target)));
     }
 }
