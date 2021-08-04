@@ -44,29 +44,30 @@ class TreeNode {
 }
 
 class Solution {
-    List<List <Integer>> result = new ArrayList<>();
+    List<List<Integer>> result = new ArrayList<>();
+    List<Integer> curList = new ArrayList<>();
 
     public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
-        if(root == null) return result;
-
-        List<Integer> curList = new ArrayList<>();
-        addResult(root, targetSum, curList);
+        addResult(root, targetSum);
         return result;
     }
 
-    void addResult(TreeNode root, int targetSum, List<Integer> curList){
-        List<Integer> subList = new ArrayList<>(curList);
-        subList.add(root.val);
+    void addResult(TreeNode root, int targetSum){
+        if(root == null) return;
 
         int nextVal = targetSum - root.val;
 
-        if(root.left != null) addResult(root.left, nextVal, subList);
-        if(root.right != null) addResult(root.right, nextVal, subList);
-
         if(root.left == null && root.right == null){
             if(targetSum == root.val){
+                List<Integer> subList = new ArrayList<>(curList);
+                subList.add(root.val);
                 result.add(subList);
             }
+        }else{
+            curList.add(root.val);
+            addResult(root.left, nextVal);
+            addResult(root.right, nextVal);
+            curList.remove(curList.size()-1);
         }
     }
 }

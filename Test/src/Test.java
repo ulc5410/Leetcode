@@ -1,16 +1,20 @@
 import java.util.*;
 
-class TreeNode { // binary tree
+//  Definition for a binary tree node.
+class TreeNode {
     int val;
-    int pos;
     TreeNode left;
     TreeNode right;
+    int pos;
+
+    TreeNode() {
+    }
 
     TreeNode(int val) {
         this.val = val;
     }
 
-    TreeNode(int val, TreeNode left, TreeNode right, int pos) {
+    TreeNode(int val, TreeNode left, TreeNode right,int pos) {
         this.val = val;
         this.left = left;
         this.right = right;
@@ -37,42 +41,57 @@ class TreeNode { // binary tree
             else insert(target_pos, val, root.right);
         }
     }
-
-    static void preorder(TreeNode root)
-    {
-        if(root != null){
-            System.out.printf("%2d",root.val);
-            preorder(root.left);
-            preorder(root.right);
-        }else System.out.printf(" null");
-    }
 }
 
 class Solution {
-    public TreeNode pruneTree(TreeNode root) {
-        if(root == null) return root;
-        root.left = pruneTree(root.left);
-        root.right = pruneTree(root.right);
-        if(root.val == 0 && root.left == null && root.right == null) return null;
-        return  root;
+    List<List<Integer>> result = new ArrayList<>();
+    List<Integer> curList = new ArrayList<>();
+
+    public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
+        addResult(root, targetSum);
+        return result;
+    }
+
+    void addResult(TreeNode root, int targetSum){
+        if(root == null) return;
+
+        int nextVal = targetSum - root.val;
+
+        if(root.left == null && root.right == null){
+            if(targetSum == root.val){
+                List<Integer> subList = new ArrayList<>(curList);
+                subList.add(root.val);
+                result.add(subList);
+            }
+        }else{
+            curList.add(root.val);
+            addResult(root.left, nextVal);
+            addResult(root.right, nextVal);
+            curList.remove(curList.size()-1);
+        }
     }
 }
 
 public class Test {
     public static void main(String[] args) {
         Solution obj = new Solution();
+        int target = 22;
 
-        TreeNode root = new TreeNode(1, null, null, 1);
-        TreeNode.insert(2, 0, root);
-        TreeNode.insert(3, 0, root);
-        TreeNode.insert(4, 0, root);
-        TreeNode.insert(5, 0, root);
-        TreeNode.insert(6, 0, root);
-        TreeNode.insert(7, 1, root);
+        TreeNode root = new TreeNode(5, null, null, 1);
+        TreeNode.insert(2, 4, root);
+        TreeNode.insert(3, 8, root);
+        TreeNode.insert(4, 11, root);
+        TreeNode.insert(6, 13, root);
+        TreeNode.insert(7, 4, root);
+        TreeNode.insert(8, 7, root);
+        TreeNode.insert(9, 2, root);
+        TreeNode.insert(14, 5, root);
+        TreeNode.insert(15, 1, root);
 
-        root = obj.pruneTree(root);
-        TreeNode.preorder(root);
+        List<List <Integer>> result = obj.pathSum(root, target);
 
-        System.out.println("done");
+        for(int i = 0; i < result.size(); i++){
+            System.out.println( result.get(i).toString());
+        }
     }
 }
