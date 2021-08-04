@@ -29,10 +29,10 @@ class TreeNode { // binary tree
         int next_pos = target_pos;
         while((next_pos!=2*root.pos) && (next_pos!=(2*root.pos+1)) || next_pos==0) next_pos = next_pos/2;
         if(next_pos == 0) System.out.println("invalid insert");
-        else if(next_pos == 2*root.val){
+        else if(next_pos == 2*root.pos){
             if(root.left == null) System.out.println("invalid insert");
             else insert(target_pos, val, root.left);
-        }else if(next_pos == (2*root.val+1)){
+        }else if(next_pos == (2*root.pos+1)){
             if(root.right == null) System.out.println("invalid insert");
             else insert(target_pos, val, root.right);
         }
