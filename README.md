@@ -4,12 +4,16 @@
 https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU
 
 Array:
+* 1.Two Sum
 * 7.Reverse Integer
 * 66.Plus One
 * 92.Reverse Linked List II
+* 121.Best Time to Buy and Sell Stock
+* 122.Best Time to Buy and Sell Stock II
 * 136.Single Number
 * 189.Rotate Array
 * 217.Contains Duplicate
+* 238.Product of Array Except Self
 * 283.Move Zeroes
 * 350.Intersection of Two Arrays II
 * 378.Kth Smallest Element in a Sorted Matrix
@@ -33,7 +37,7 @@ Binary Search:
 * 658.Find K Closest Elements
 
 Hash:
-* 1.Two Sum
+
 * 128.Longest Consecutive Sequence
 
 Map:
@@ -93,8 +97,7 @@ Greedy:
 
 
 Others:
-* 121.Best Time to Buy and Sell Stock
-* 122.Best Time to Buy and Sell Stock II
+
 * 729.My Calendar I
 * 860.Lemonade Change
 * 1465.Maximum Area of a Piece of Cake After Horizontal and Vertical Cuts
