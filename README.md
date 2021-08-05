@@ -32,6 +32,7 @@ Pointer:
 
 Recursion:
 * 108.Convert Sorted Array to Binary Search Tree
+* 877.Stone Game
 
 Binary Search:
 * 162.Find Peak Element
@@ -84,6 +85,7 @@ DP:
 * 718.Maximum Length of Repeated Subarray
 * 746.Min Cost Climbing Stairs
 * 795.Number of Subarrays with Bounded Maximum
+* 877.Stone Game
 * 871.Minimum Number of Refueling Stops
 * 1220.Count Vowels Permutation
 * 1690.Stone Game VII
