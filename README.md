@@ -63,6 +63,7 @@ Tree:
 * 236.Lowest Common Ancestor of a Binary Tree
 * 307.Range Sum Query - Mutable(Fenwick Tree)
 * --315. Count of Smaller Numbers After Self(AVL)
+* 429.N-ary Tree Level Order Traversal
 * 814.Binary Tree Pruning
 
 Graph:

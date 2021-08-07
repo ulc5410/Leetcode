@@ -27,7 +27,7 @@ class Solution {
         Queue<Node> q = new LinkedList<>();
         q.add(root);
 
-       while(!q.isEmpty()){
+        while(!q.isEmpty()){
             int size = q.size();
             List<Integer> resultLevel = new ArrayList<>();
 
@@ -40,7 +40,7 @@ class Solution {
             }
             pos++;
             result.add(resultLevel);
-       }
+        }
 
         return result;
     }
