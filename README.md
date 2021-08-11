@@ -88,6 +88,7 @@ DP:
 * 795.Number of Subarrays with Bounded Maximum
 * 877.Stone Game
 * 871.Minimum Number of Refueling Stops
+* 926.Flip String to Monotone Increasing
 * 1220.Count Vowels Permutation
 * 1690.Stone Game VII
 * 1696.Jump Game VI
