@@ -8,6 +8,7 @@ Array:
 * 7.Reverse Integer
 * 53.Maximum Subarray
 * 66.Plus One
+* 73.Set Matrix Zeroes
 * 92.Reverse Linked List II
 * 121.Best Time to Buy and Sell Stock
 * 122.Best Time to Buy and Sell Stock II
