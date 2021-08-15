@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Blind75/Blind75.iml" filepath="$PROJECT_DIR$/Blind75/Blind75.iml" />
       <module fileurl="file://$PROJECT_DIR$/Finished/Finished.iml" filepath="$PROJECT_DIR$/Finished/Finished.iml" />
       <module fileurl="file://$PROJECT_DIR$/Leetcode.iml" filepath="$PROJECT_DIR$/Leetcode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SQL/SQL.iml" filepath="$PROJECT_DIR$/SQL/SQL.iml" />
       <module fileurl="file://$PROJECT_DIR$/Test/Test.iml" filepath="$PROJECT_DIR$/Test/Test.iml" />
     </modules>
   </component>

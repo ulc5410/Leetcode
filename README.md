@@ -110,4 +110,8 @@ Others:
 * 1528.Shuffle String
 * 1710.Maximum Units on a Truck
 
+
+SQL:
+* 177.Nth Highest Salary
+* 596.Classes More Than 5 Students
 ** "--"means not implemented
