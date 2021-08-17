@@ -23,7 +23,6 @@ class Solution {
         List<List<Integer>> result = new ArrayList<>();
         if(root == null) return result;
 
-        int pos = 0;
         Queue<Node> q = new LinkedList<>();
         q.add(root);
 
@@ -38,7 +37,6 @@ class Solution {
                     q.add(current.children.get(j));
                 }
             }
-            pos++;
             result.add(resultLevel);
         }
 

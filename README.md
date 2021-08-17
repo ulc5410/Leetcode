@@ -58,13 +58,17 @@ Queue:
 * 752.Open the Lock
 
 Tree:
-* 113.Path Sum II
+* 94.Binary Tree Inorder Traversal
 * 105.Construct Binary Tree from Preorder and Inorder Traversal(Binary Tree)
+* 113.Path Sum II
+* 144.Binary Tree Preorder Traversal
 * 235.Lowest Common Ancestor of a Binary Search Tree
 * 236.Lowest Common Ancestor of a Binary Tree
 * 307.Range Sum Query - Mutable(Fenwick Tree)
 * --315. Count of Smaller Numbers After Self(AVL)
 * 429.N-ary Tree Level Order Traversal
+* 589.N-ary Tree Preorder Traversal
+* 590.N-ary Tree Postorder Traversal
 * 814.Binary Tree Pruning
 
 Graph:
