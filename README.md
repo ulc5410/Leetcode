@@ -62,6 +62,7 @@ Tree:
 * 105.Construct Binary Tree from Preorder and Inorder Traversal(Binary Tree)
 * 113.Path Sum II
 * 144.Binary Tree Preorder Traversal
+* 145.Binary Tree Postorder Traversal
 * 235.Lowest Common Ancestor of a Binary Search Tree
 * 236.Lowest Common Ancestor of a Binary Tree
 * 307.Range Sum Query - Mutable(Fenwick Tree)
@@ -118,4 +119,5 @@ Others:
 SQL:
 * 177.Nth Highest Salary
 * 596.Classes More Than 5 Students
+
 ** "--"means not implemented
