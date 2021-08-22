@@ -59,6 +59,8 @@ Queue:
 
 Tree:
 * 94.Binary Tree Inorder Traversal
+* 100.Same Tree
+* 101.Symmetric Tree
 * 105.Construct Binary Tree from Preorder and Inorder Traversal(Binary Tree)
 * 113.Path Sum II
 * 144.Binary Tree Preorder Traversal
