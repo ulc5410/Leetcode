@@ -2,23 +2,43 @@ import java.util.*;
 // Definition for a binary tree node.
 class Solution {
 
-    public String complexNumberMultiply(String a, String b) {
-        String x[] = a.split("\\+|i");
-        String y[] = b.split("\\+|i");
-        int a_real = Integer.parseInt(x[0]);
-        int a_img = Integer.parseInt(x[1]);
-        int b_real = Integer.parseInt(y[0]);
-        int b_img = Integer.parseInt(y[1]);
-        return (a_real * b_real - a_img * b_img) + "+" + (a_real * b_img + a_img * b_real) + "i";
+    public boolean solution(int N, int [] A, int [] B) {
+        Map<Integer,List<Integer>> map = new HashMap<>();
+        int M = A.length;
+
+        for(int i = 0; i < M; i++){
+            int source, dest;
+            if(A[i]<B[i]){
+                source = A[i];
+                dest = B[i];
+            }
+            else{
+                source = B[i];
+                dest = A[i];
+            }
+            if (!map.containsKey(source)) {
+                map.put(source, new LinkedList<Integer>());
+            }
+            map.get(source).add(dest);
+        }
+
+        for(int i = 1; i < N; i++){
+            if(!map.get(i).contains(i+1))
+                return false;
+        }
+        return true;
     }
 }
 
 public class Test {
     public static void main(String[] args) {
         Solution obj = new Solution();
-        String a = "1+1i";
-        String b = "1+1i";
-        System.out.println(obj.complexNumberMultiply(a, b));
+        int N = 4;
+//        int[] A = {1,2,4,4,3};
+//        int[] B = {2,3,1,3,1};
+        int[] A = {1,2,1,3};
+        int[] B = {2,4,3,4};
+        System.out.println(obj.solution(N ,A, B));
     }
 }
 
